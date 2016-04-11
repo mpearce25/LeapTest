@@ -22,6 +22,7 @@ class Display extends JFrame{
 		label = new JLabel();
 		label.setText("Robot");
 		label.setLocation(100, 100);
+		label.setFont(new Font("TimesRoman", Font.BOLD, 30));
 		label.setSize(new Dimension(100,100));
 		mainFrame.add(label);
 		

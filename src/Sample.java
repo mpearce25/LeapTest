@@ -9,7 +9,9 @@ import javax.swing.JPanel;
 import com.leapmotion.leap.*;
 import com.leapmotion.leap.Gesture.State;
 
+
 class SampleListener extends Listener  {
+	int frames = 0;
 	public void onInit(Controller controller) {
 		System.out.println("Initialized");
 		
@@ -34,6 +36,8 @@ class SampleListener extends Listener  {
 	}
 
 	public void onFrame(Controller controller) {
+		System.out.println(frames);
+		frames++;
 		// Get the most recent frame and report some basic information
 		Frame frame = controller.frame();
 		/*System.out.println("Frame id: " + frame.id() + ", timestamp: "
@@ -42,6 +46,7 @@ class SampleListener extends Listener  {
 				+ frame.tools().count() + ", gestures "
 				+ frame.gestures().count());*/
 
+		
 		// Get hands
 		for (Hand hand : frame.hands()) {
 			/*String handType = hand.isLeft() ? "Left hand" : "Right hand";
